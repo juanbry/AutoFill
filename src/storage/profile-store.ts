@@ -1,16 +1,16 @@
-import { type Profile, ProfileSchema } from "../core/schema";
+import { type Profile, parseProfile } from "../core/schema";
 
 const KEY = "profile.v1";
 
 export async function importProfile(json: string): Promise<Profile> {
-	const profile = ProfileSchema.parse(JSON.parse(json));
+	const profile = parseProfile(JSON.parse(json));
 	await browser.storage.local.set({ [KEY]: profile });
 	return profile;
 }
 
 export async function loadProfile(): Promise<Profile | null> {
 	const { [KEY]: raw } = await browser.storage.local.get(KEY);
-	return raw ? ProfileSchema.parse(raw) : null;
+	return raw ? parseProfile(raw) : null;
 }
 
 export async function clearProfile() {

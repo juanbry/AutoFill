@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"personal": {
+		"firstName": "Ada",
+		"lastName": "Lovelace",
+		"email": "ada@example.com",
+		"phone": { "countryCode": "+34", "number": "600000000" }
+	},
+	"address": {
+		"line1": "Calle Ejemplo 1",
+		"city": "Madrid",
+		"region": "Madrid",
+		"postalCode": "28001",
+		"country": "Spain"
+	},
+	"links": {},
+	"experience": [],
+	"education": [],
+	"answers": { "noticePeriod": "1 mes" }
+}

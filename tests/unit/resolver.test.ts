@@ -8,13 +8,13 @@ const profile = ProfileSchema.parse(example);
 describe("resolver", () => {
 	it("resuelve rutas con índices", () => {
 		expect(getByPath(profile, "experience[0].company")).toBe(
-			"Analytical Engines S.L.",
+			"Analytical Engines S.A.C.",
 		);
 	});
 
 	it("aplica transforms", () => {
 		expect(resolveValue(profile, "personal.phone.number", "phoneFull")).toBe(
-			"+34600000000",
+			"+51900000000",
 		);
 	});
 

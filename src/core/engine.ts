@@ -2,7 +2,7 @@ import { findFirst, sleep, waitFor } from "./dom";
 import { setChecked, setCombobox, setSelect, setText } from "./events";
 import { resolveValue } from "./resolver";
 import { getByPath } from "./resolver";
-import type { Profile } from "./schema";
+import { type Profile, isSensitivePath } from "./schema";
 import type {
 	FieldMapping,
 	FieldResult,
@@ -38,7 +38,10 @@ async function processField(
 	results: FieldResult[],
 ) {
 	try {
-		if (f.sensitive && !opts.includeSensitive) {
+		if (
+			(f.sensitive || isSensitivePath(profile, f.path)) &&
+			!opts.includeSensitive
+		) {
 			results.push({ key: f.key, status: "skipped", detail: "campo sensible" });
 			return;
 		}

@@ -3,7 +3,7 @@ import type { Profile } from "./schema";
 const TRANSFORMS: Record<string, (v: unknown, p: Profile) => string> = {
 	upper: (v) => String(v).toUpperCase(),
 	phoneFull: (_v, p) =>
-		`${p.personal.phone.countryCode}${p.personal.phone.number}`,
+		`${p.personal.phone?.countryCode ?? ""}${p.personal.phone?.number ?? ""}`,
 	yesNo: (v) => (v ? "Yes" : "No"),
 	monthYear: (v) => {
 		const [y, m] = String(v).split("-");
@@ -16,8 +16,10 @@ export function getByPath(obj: unknown, path: string): unknown {
 		.replace(/\[(\d+)\]/g, ".$1")
 		.split(".")
 		.reduce<unknown>((acc, key) => {
-			if (acc === null || acc === undefined || typeof acc !== "object")
-				return undefined;
+			if (acc == null) return undefined;
+			if (Array.isArray(acc) && !/^\d+$/.test(key))
+				return acc.find((item) => item?.id === key);
+			if (typeof acc !== "object") return undefined;
 			return key in acc ? (acc as Record<string, unknown>)[key] : undefined;
 		}, obj);
 }

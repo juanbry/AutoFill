@@ -1,48 +1,56 @@
 {
-	"schemaVersion": 1,
+	"schemaVersion": 2,
 	"personal": {
 		"firstName": "Ada",
 		"lastName": "Lovelace",
 		"email": "ada@example.com",
-		"phone": {
-			"countryCode": "+34",
-			"number": "600000000"
-		}
+		"phone": { "countryCode": "+51", "number": "900000000" }
 	},
 	"address": {
-		"line1": "Calle Ejemplo 1",
-		"city": "Madrid",
-		"region": "Madrid",
-		"postalCode": "28001",
-		"country": "Spain"
+		"line1": "Av. Ejemplo 123",
+		"city": "Lima",
+		"region": "Lima",
+		"postalCode": "15001",
+		"country": "Perú"
 	},
-	"links": {
-		"linkedin": "https://www.linkedin.com/in/ada-example",
-		"github": "https://github.com/ada-example"
+	"identity": {
+		"documentType": "DNI",
+		"documentNumber": "00000000",
+		"birthDate": "1990-01-01",
+		"nationality": "Peruana"
 	},
-	"workAuthorization": {
-		"authorized": true,
-		"requiresSponsorship": false
-	},
+	"links": { "github": "https://github.com/ada-example" },
+	"workAuthorization": { "authorized": true, "requiresSponsorship": false },
+	"preferences": { "salaryExpectation": "A convenir", "noticePeriod": "1 mes" },
 	"experience": [
 		{
-			"company": "Analytical Engines S.L.",
-			"title": "Software Engineer",
-			"location": "Madrid",
-			"startDate": "2021-03",
-			"current": true,
-			"description": "Desarrollo de herramientas internas."
+			"company": "Analytical Engines S.A.C.",
+			"title": "Desarrolladora",
+			"startDate": "2022-03",
+			"current": true
 		}
 	],
 	"education": [
 		{
 			"school": "Universidad de Ejemplo",
-			"degree": "Grado en Ingeniería Informática",
-			"startDate": "2017-09",
-			"endDate": "2021-06"
+			"degree": "Ingeniería de Sistemas",
+			"startDate": "2018-03",
+			"endDate": "2022-12"
 		}
 	],
-	"answers": {
-		"noticePeriod": "1 mes"
-	}
+	"languages": [
+		{ "name": "Español", "level": "Nativo" },
+		{ "name": "Inglés", "level": "Intermedio" }
+	],
+	"skills": ["TypeScript", "SQL"],
+	"custom": [
+		{
+			"id": "disponibilidad-viaje",
+			"label": "Disponibilidad para viajar",
+			"type": "boolean",
+			"value": true,
+			"matchLabels": ["disponibilidad para viajar", "willing to travel"],
+			"sensitive": false
+		}
+	]
 }
