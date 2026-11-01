@@ -5,10 +5,7 @@ import { loadProfile } from "../storage/profile-store";
 
 type AutofillMessage = { type?: string; options?: RunOptions };
 
-export default defineContentScript({
-	matches: ["<all_urls>"],
-	registration: "runtime",
-	allFrames: true,
+export default defineUnlistedScript({
 	async main() {
 		browser.runtime.onMessage.addListener(async (raw: unknown) => {
 			if (typeof raw !== "object" || raw === null) return;

@@ -22,7 +22,7 @@ document.querySelector("#fill")?.addEventListener("click", async () => {
 	if (!tab.id) return;
 	await browser.scripting.executeScript({
 		target: { tabId: tab.id, allFrames: true },
-		files: ["/content-scripts/content.js"],
+		files: ["/content-unlisted.js"],
 	});
 	const dryRun = (document.querySelector("#dry") as HTMLInputElement).checked;
 	const response = await browser.tabs.sendMessage(tab.id, {

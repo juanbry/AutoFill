@@ -78,6 +78,8 @@ gitleaks detect --redact
 
 ## Seguridad y privacidad
 
+- Consulta [PRIVACY.md](./PRIVACY.md) para conocer las garantías y verificaciones
+  de privacidad.
 - Ningún dato personal real debe estar en el repositorio.
 - El motor ignora campos `password`, `file`, `hidden` y botones de envío.
 - Las exportaciones de respaldo pueden cifrarse con AES-GCM y PBKDF2.
