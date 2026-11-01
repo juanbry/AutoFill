@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fictitious example profile values"
+paths = [
+  '''profiles/example\.profile\.json'''
+]

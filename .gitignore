@@ -1,0 +1,9 @@
+node_modules/
+.output/
+.wxt/
+test-results/
+profiles/*.json
+!profiles/example.profile.json
+*.local.json
+*.local.enc
+.env*

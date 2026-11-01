@@ -1,0 +1,74 @@
+{
+	"id": "successfactors",
+	"match": [
+		"*.successfactors.com",
+		"*.successfactors.eu",
+		"*.sapsf.com",
+		"*.sapsf.eu"
+	],
+	"fields": [
+		{
+			"key": "firstName",
+			"path": "personal.firstName",
+			"kind": "text",
+			"optional": true,
+			"selectors": [
+				"input[autocomplete='given-name']",
+				"input[name*='firstName' i]",
+				"input[aria-label*='first name' i]",
+				"input[aria-label*='nombre' i]"
+			]
+		},
+		{
+			"key": "lastName",
+			"path": "personal.lastName",
+			"kind": "text",
+			"optional": true,
+			"selectors": [
+				"input[autocomplete='family-name']",
+				"input[name*='lastName' i]",
+				"input[aria-label*='last name' i]",
+				"input[aria-label*='apellido' i]"
+			]
+		},
+		{
+			"key": "email",
+			"path": "personal.email",
+			"kind": "text",
+			"optional": true,
+			"selectors": ["input[type='email']", "input[name*='email' i]"]
+		},
+		{
+			"key": "phone",
+			"path": "personal.phone.number",
+			"kind": "text",
+			"optional": true,
+			"selectors": [
+				"input[type='tel']",
+				"input[name*='phone' i]",
+				"input[name*='mobile' i]"
+			]
+		},
+		{
+			"key": "city",
+			"path": "address.city",
+			"kind": "text",
+			"optional": true,
+			"selectors": [
+				"input[autocomplete='address-level2']",
+				"input[name*='city' i]"
+			]
+		},
+		{
+			"key": "postal",
+			"path": "address.postalCode",
+			"kind": "text",
+			"optional": true,
+			"selectors": [
+				"input[autocomplete='postal-code']",
+				"input[name*='zip' i]",
+				"input[name*='postal' i]"
+			]
+		}
+	]
+}

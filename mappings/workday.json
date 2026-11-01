@@ -1,0 +1,90 @@
+{
+	"id": "workday",
+	"match": ["*.myworkdayjobs.com", "*.myworkdaysite.com"],
+	"waitFor": "[data-automation-id='legalNameSection_firstName']",
+	"fields": [
+		{
+			"key": "firstName",
+			"path": "personal.firstName",
+			"kind": "text",
+			"selectors": ["[data-automation-id='legalNameSection_firstName']"]
+		},
+		{
+			"key": "lastName",
+			"path": "personal.lastName",
+			"kind": "text",
+			"selectors": ["[data-automation-id='legalNameSection_lastName']"]
+		},
+		{
+			"key": "email",
+			"path": "personal.email",
+			"kind": "text",
+			"optional": true,
+			"selectors": ["[data-automation-id='email']", "input[type='email']"]
+		},
+		{
+			"key": "phone",
+			"path": "personal.phone.number",
+			"kind": "text",
+			"optional": true,
+			"selectors": ["[data-automation-id='phone-number']"]
+		},
+		{
+			"key": "address1",
+			"path": "address.line1",
+			"kind": "text",
+			"selectors": ["[data-automation-id='addressSection_addressLine1']"]
+		},
+		{
+			"key": "city",
+			"path": "address.city",
+			"kind": "text",
+			"selectors": ["[data-automation-id='addressSection_city']"]
+		},
+		{
+			"key": "postal",
+			"path": "address.postalCode",
+			"kind": "text",
+			"selectors": ["[data-automation-id='addressSection_postalCode']"]
+		},
+		{
+			"key": "country",
+			"path": "address.country",
+			"kind": "combobox",
+			"selectors": ["[data-automation-id='countryDropdown']"]
+		},
+		{
+			"key": "sponsorship",
+			"path": "workAuthorization.requiresSponsorship",
+			"kind": "checkbox",
+			"sensitive": true,
+			"optional": true,
+			"selectors": ["[data-automation-id='sponsorship']"]
+		}
+	],
+	"repeats": [
+		{
+			"key": "experience",
+			"collection": "experience",
+			"addButton": "[data-automation-id='workExperienceSection'] [data-automation-id='add-button']",
+			"fields": [
+				{
+					"key": "jobTitle",
+					"path": "experience[{i}].title",
+					"kind": "text",
+					"selectors": [
+						"[data-automation-id='workExperience-{n}'] [data-automation-id='jobTitle']"
+					]
+				},
+				{
+					"key": "company",
+					"path": "experience[{i}].company",
+					"kind": "text",
+					"selectors": [
+						"[data-automation-id='workExperience-{n}'] [data-automation-id='company']"
+					]
+				}
+			]
+		}
+	]
+}

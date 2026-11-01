@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"personal": {
+		"firstName": "Ada",
+		"lastName": "Lovelace",
+		"email": "ada@example.com",
+		"phone": {
+			"countryCode": "+34",
+			"number": "600000000"
+		}
+	},
+	"address": {
+		"line1": "Calle Ejemplo 1",
+		"city": "Madrid",
+		"region": "Madrid",
+		"postalCode": "28001",
+		"country": "Spain"
+	},
+	"links": {
+		"linkedin": "https://www.linkedin.com/in/ada-example",
+		"github": "https://github.com/ada-example"
+	},
+	"workAuthorization": {
+		"authorized": true,
+		"requiresSponsorship": false
+	},
+	"experience": [
+		{
+			"company": "Analytical Engines S.L.",
+			"title": "Software Engineer",
+			"location": "Madrid",
+			"startDate": "2021-03",
+			"current": true,
+			"description": "Desarrollo de herramientas internas."
+		}
+	],
+	"education": [
+		{
+			"school": "Universidad de Ejemplo",
+			"degree": "Grado en Ingeniería Informática",
+			"startDate": "2017-09",
+			"endDate": "2021-06"
+		}
+	],
+	"answers": {
+		"noticePeriod": "1 mes"
+	}
+}
